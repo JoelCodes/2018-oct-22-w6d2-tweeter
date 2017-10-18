@@ -43,10 +43,13 @@
 .tweet-footer span {
     float: right;
     padding: 0 10px;
-    visibility: hidden;
 }
 
 .tweet-footer p {
     padding: 0px 10px;
     font-size: small;
+}
+
+.hidden {
+    visibility: hidden;
 }

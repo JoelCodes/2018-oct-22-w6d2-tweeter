@@ -4,8 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$.ready(function() {
-    $(".tweet-area").on("hover", function() {
-        $(this).
+$(function() {
+    $(".tweet-area").on("mouseenter", function() {
+        $(".tweet-footer > span").removeClass("hidden");
+    });
+    $(".tweet-area").on("mouseleave", function() {
+        $(".tweet-footer > span").addClass("hidden");
     });
 });
