@@ -126,14 +126,20 @@ $(function() {
     });
     $(".new-tweet form").on("submit", function(event) {
         event.preventDefault();
-        $.ajax({
-            method: "POST",
-            url: "/tweets",
-            data: $(this).serialize()
-        }).done(function() {
-            $(".new-tweet form")[0].reset();
-            $(".counter").text(140);
-            loadTweets();
-        });
+        if(!$(".new-tweet textarea").val()) {
+            $.notify("Unable to save tweet: Tweets must be greater than 0 characters long");
+        } else if($(".new-tweet textarea").val().length > 140) {
+            $.notify("Unable to save tweet: Tweets cannot be more than 140 characters long");
+        } else {
+            $.ajax({
+                method: "POST",
+                url: "/tweets",
+                data: $(this).serialize()
+            }).done(function() {
+                $(".new-tweet form")[0].reset();
+                $(".counter").text(140);
+                loadTweets();
+            });
+        }
     });
 });
