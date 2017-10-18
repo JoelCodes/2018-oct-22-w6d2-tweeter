@@ -4,3 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$.ready(function() {
+    $(".tweet-area").on("hover", function() {
+        $(this).
+    });
+});
