@@ -1,15 +1,36 @@
-.tweet-area {
+.hidden {
+    visibility: hidden;
+}
+
+.tweet-container {
     margin: 2em;
     border-radius: 10px;
     border: 1px solid #00a087;
     filter: opacity(75%);
 }
 
-.tweet-area:hover {
+.tweet-container:hover {
     filter: opacity(100%);
 }
 
-.tweet-header {
+.tweet-container content > p {
+    border: 1px solid #eee;
+    padding: 40px 10px;
+    margin: 0;
+    font-size: larger;
+}
+
+.tweet-container footer > p {
+    padding: 0px 10px;
+    font-size: small;
+}
+
+.tweet-container footer > span {
+    float: right;
+    padding: 0 10px;
+}
+
+.tweet-container header {
     background-color: #eee;
     padding: 10px;
     height: 95px;
@@ -17,39 +38,18 @@
     border-top-left-radius: 10px;
 }
 
-.tweet-header img {
+.tweet-container header > h2 {
+    display: inline;
+    margin: 10px;
+}
+
+.tweet-container header > img {
     height: 75px;
     float: left;
     border-radius: 10px;
 }
 
-.tweet-header h2 {
-    display: inline;
-    margin: 10px;
-}
-
-.tweet-header p {
+.tweet-container header > p {
     float: right;
     color: #00a087;
-}
-
-.tweet-content p {
-    border: 1px solid #eee;
-    padding: 40px 10px;
-    margin: 0;
-    font-size: larger;
-}
-
-.tweet-footer span {
-    float: right;
-    padding: 0 10px;
-}
-
-.tweet-footer p {
-    padding: 0px 10px;
-    font-size: small;
-}
-
-.hidden {
-    visibility: hidden;
 }
