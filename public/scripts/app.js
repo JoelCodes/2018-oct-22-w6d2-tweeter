@@ -51,10 +51,9 @@ $(function() {
           "created_at": 1461113796368
         }
     ];
-    
-    var allTweets = $(data);
 
     function renderTweets(tweets) {
+        console.log(tweets);
         tweets.forEach(function(tweet) {
             $(".tweet-area").prepend(createTweetElement(tweet));
         });
@@ -69,8 +68,41 @@ $(function() {
             renderTweets(tweets);
         });
     }
-    
+
+    function howLongAgo(timestamp) {
+        var now = Date.now();
+        var value = Math.floor((now - timestamp) / 1000);
+        var timeUnit = " seconds";
+        switch(true) {
+            case value > 3.154e+7:
+            value = Math.floor(value / 60 / 60 / 24 / 365);
+            timeUnit = value > 1 ? " years" : " year";
+            break;
+            case value > 86400:
+            value = Math.floor(value / 60 / 60 / 24);
+            timeUnit = " days";
+            break;
+            case value > 3600:
+            value = Math.floor(value / 60 / 60);
+            timeUnit = " hours";
+            break;
+            case value > 60:
+            value = Math.floor(value / 60);
+            timeUnit = " minutes";
+            break;
+        }
+        return value + timeUnit + " ago";
+    }
+
     function createTweetElement(tweetData) {
+
+        var $icons = [HEART, RETWEET, FLAG].map(function(icon) {
+            return $("<span>", {
+                class: 'icon',
+                html: icon
+            });
+        });
+
         return $tweet = $("<article>", {
             'class': "tweet-container",
             html: [
@@ -95,41 +127,32 @@ $(function() {
                     ]
                 }),
                 $("<footer>", {
-                    html: [
+                    html: $icons.concat(
                         $("<span>", {
-                            'class': "hidden",
-                            text: 1
-                        }),
-                        $("<span>", {
-                            'class': "hidden",
-                            text: 2
-                        }),
-                        $("<span>", {
-                            'class': "hidden",
-                            text: 3
-                        }),
-                        $("<footer>", {
-                            text: tweetData.created_at
+                            text: howLongAgo(tweetData.created_at)
                         })
-                    ]
+                    )
                 })
             ]
         });
     }
 
     loadTweets();
-    $(".container").on("mouseenter", ".tweet-container", function() {
-        $(this).find("span").removeClass("hidden");
-    });
-    $(".container").on("mouseleave", ".tweet-container", function() {
-        $(this).find("span").addClass("hidden");
+    $("#nav-bar button").on("click", function() {
+        var newTweet = $(".new-tweet");
+        newTweet.slideToggle(400, function() {
+            if(newTweet.height() > 0) {
+                $(".new-tweet textarea").focus();
+            }    
+        });
     });
     $(".new-tweet form").on("submit", function(event) {
         event.preventDefault();
-        if(!$(".new-tweet textarea").val()) {
+        var tweetValue = $(".new-tweet textarea").val();
+        if(!tweetValue) {
             $.notify("Unable to save tweet: Tweets must be greater than 0 characters long");
-        } else if($(".new-tweet textarea").val().length > 140) {
-            $.notify("Unable to save tweet: Tweets cannot be more than 140 characters long");
+        } else if(tweetValue.length > MAX_CHARACTERS) {
+            $.notify("Unable to save tweet: Tweets cannot be more than " + MAX_CHARACTERS + " characters long");
         } else {
             $.ajax({
                 method: "POST",
@@ -137,7 +160,7 @@ $(function() {
                 data: $(this).serialize()
             }).done(function() {
                 $(".new-tweet form")[0].reset();
-                $(".counter").text(140);
+                $(".counter").text(MAX_CHARACTERS);
                 loadTweets();
             });
         }

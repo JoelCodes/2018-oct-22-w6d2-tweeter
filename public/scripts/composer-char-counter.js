@@ -1,9 +1,6 @@
-var MAX_CHARACTERS = 140;
-
-$(document).ready(function() {
-    $(".new-tweet textarea").on("keyup", function(event) {
-        var contentLength = $(this).val().length;
-        var charsRemaining = MAX_CHARACTERS - contentLength;
+$(function() {
+    $(".new-tweet textarea").on("input", function(event) {
+        var charsRemaining = MAX_CHARACTERS - $(this).val().length;
 
         var span = $(this).parent().find(".counter");
 
