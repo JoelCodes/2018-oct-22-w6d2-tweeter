@@ -1,10 +1,16 @@
 # Tweeter Project
 
-A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz, now completed by Curtis Bateson.
+A Twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz, now completed by Curtis Bateson.
+
+This Twitter clone allows you to view the existing tweets in the database and add your own. Users are generated randomly for each tweet that is added. Tweets can be 140 characters (current Twitter standard) and the tweet will appear at the top of the list - right before your eyes!
 
 ## Final Product
 
-Screenshots!
+!["Tweeter Feed"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-Feed.png)
+
+!["Composing a Tweet"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-In-Progress.png)
+
+!["New Tweet"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-New-Tweet.png)
 
 ## Dependencies
 
