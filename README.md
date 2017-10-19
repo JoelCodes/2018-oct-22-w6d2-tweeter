@@ -6,9 +6,17 @@ This Twitter clone allows you to view the existing tweets in the database and ad
 
 ## Final Product
 
+Tweeter Feed:
+
 !["Tweeter Feed"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-Feed.png)
 
+
+Composing a Tweet:
+
 !["Composing a Tweet"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-In-Progress.png)
+
+
+New Tweet:
 
 !["New Tweet"](https://github.com/curtisbateson/tweeter/blob/master/docs/Tweeter-New-Tweet.png)
 
