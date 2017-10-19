@@ -13,10 +13,6 @@
     filter: opacity(100%);
 }
 
-.tweet-container:hover footer > span.icon {
-    opacity: 1
-}
-
 .tweet-container content > p {
     border: 1px solid #eee;
     padding: 40px 10px;
@@ -38,6 +34,10 @@
     opacity: 0;
     margin-right: 10px;
     color: #00a087;
+}
+
+.tweet-container:hover footer > span.icon {
+    opacity: 1
 }
 
 .tweet-container header {

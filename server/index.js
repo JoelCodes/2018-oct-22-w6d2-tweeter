@@ -1,8 +1,10 @@
 "use strict";
 
+// MongoDB setup
 const { MongoClient } = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
+// App begins listening after database connection is successful
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);
@@ -13,7 +15,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
   // Basic express setup:
-
   const PORT          = 8080;
   const express       = require("express");
   const bodyParser    = require("body-parser");
@@ -31,6 +32,4 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
   });
-
-  //db.close();
 });

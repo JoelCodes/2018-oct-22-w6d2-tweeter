@@ -8,19 +8,6 @@
     z-index: 1;
 }
 
-#nav-bar img {
-    width: 80px;
-    height: 80px;
-    float: left;
-}
-
-#nav-bar span {
-    float: left;
-    line-height: 2.5em;
-    font-size: 2em;
-    margin-left: 10px;    
-}
-
 #nav-bar button {
     float: right;
     padding: 20px 5px;
@@ -33,4 +20,17 @@
 
 #nav-bar button:hover {
     color: black;
+}
+
+#nav-bar img {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+#nav-bar span {
+    float: left;
+    line-height: 2.5em;
+    font-size: 2em;
+    margin-left: 10px;    
 }
