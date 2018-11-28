@@ -21,6 +21,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   const app           = express();
 
   app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json({}));
   app.use(express.static("public"));
 
   const DataHelpers = require("./lib/data-helpers.js")(db);

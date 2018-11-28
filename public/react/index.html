@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+
+    <!-- Custom font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Tweet Area CSS -->
+    <link rel="stylesheet" href="/styles/tweet-area.css" type="text/css" />
+
+    <!-- Font Awesome Icons JS -->
+    <script src="https://use.fontawesome.com/5112113cab.js"></script>
+    
+    <!-- Constants JS -->
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <!-- Top nav bar (fixed) -->
+    <nav id="nav-bar">
+      <img src="/images/bird.png">
+      <span>Tweeter</span>
+      <button><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Compose</button>
+    </nav>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <div id="root"></div>
+    </main>
+    <script type='text/babel' src='/scripts/NewTweet.jsx'></script>
+    <script type='text/babel' src='/scripts/Tweet.jsx'></script>
+    <script type='text/babel' src='/scripts/Tweeter.jsx'></script>
+    <script type='text/babel' src='/scripts/index.jsx'></script>
+  </body>
+</html>
