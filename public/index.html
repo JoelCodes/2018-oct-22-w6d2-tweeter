@@ -22,23 +22,15 @@
     <!-- Tweet Area CSS -->
     <link rel="stylesheet" href="/styles/tweet-area.css" type="text/css" />
 
-    <!-- External JS (jQuery) -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- External JS (Notify) -->
-    <script type="text/javascript" src="/vendor/notify.js"></script>
-
     <!-- Font Awesome Icons JS -->
     <script src="https://use.fontawesome.com/5112113cab.js"></script>
     
     <!-- Constants JS -->
     <script type="text/javascript" src="/scripts/constants.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
-    <!-- Character Counter JS -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -52,17 +44,11 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </section>
-      <section class="tweet-area">
-      </section>
+      <div id="root"></div>
     </main>
-
+    <script type='text/babel' src='/scripts/NewTweet.jsx'></script>
+    <script type='text/babel' src='/scripts/Tweet.jsx'></script>
+    <script type='text/babel' src='/scripts/Tweeter.jsx'></script>
+    <script type='text/babel' src='/scripts/index.jsx'></script>
   </body>
 </html>
