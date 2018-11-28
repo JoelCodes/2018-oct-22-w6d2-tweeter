@@ -2,6 +2,8 @@
 
 A Twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz, now completed by Curtis Bateson.
 
+> ***THIS TWEETER HAZ BEN HIJAXXED BY JOELCODES FOR EJUCASHINAL PRPOSES!!!!***
+
 This Twitter clone allows you to view the existing tweets in the database and add your own. Users are generated randomly for each tweet that is added. Tweets can be 140 characters (current Twitter standard) and the tweet will appear at the top of the list - right before your eyes!
 
 ## Final Product
